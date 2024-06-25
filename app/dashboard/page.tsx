@@ -5,9 +5,16 @@ import RevenueChart from '../ui/dashboard/revenue-chart';
 import { lusitana } from '../ui/fonts';
 
 export default async function Page() {
-  const revenue = await fetchRevenue();
-  const latestInvoices = await fetchLatestInvoices();
-  const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = await fetchCardData();
+  const [
+    revenue,
+    latestInvoices,
+    {
+      totalPaidInvoices,
+      totalPendingInvoices,
+      numberOfInvoices,
+      numberOfCustomers
+    }
+  ] = await Promise.all([fetchRevenue(), fetchLatestInvoices(), fetchCardData()]);
 
   return (
     <main>
