@@ -5,7 +5,7 @@ import RevenueChart from '../../ui/dashboard/revenue-chart';
 import { lusitana } from '../../ui/fonts';
 import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons';
 
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 export default async function Page() {
 
